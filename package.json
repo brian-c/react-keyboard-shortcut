@@ -1,0 +1,7 @@
+{
+  "name": "react-keyboard-shortcut",
+  "version": "0.0.1",
+  "dependencies": {
+    "title-shortcut-handler": "~1.0.0"
+  }
+}

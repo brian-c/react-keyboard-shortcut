@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ReactKeyboardShortcut</title>
+  </head>
+
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="./node_modules/title-shortcut-handler/index.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      var Demo = React.createClass({
+        render: function() {
+          var button = React.createElement('button', {
+            type: 'button',
+            title: 'Click',
+            onClick: function() {
+              console.log('Clicked', arguments);
+            }
+          }, 'Yeah');
+
+          var shortcut = React.createElement(ReactKeyboardShortcut, {
+            alt: true,
+            char: 'X'
+          }, button);
+
+          return React.createElement('div', null, shortcut);
+        }
+      });
+
+      var container = document.createElement('div');
+      document.body.appendChild(container);
+      ReactDOM.render(React.createElement(Demo), container);
+    </script>
+  </body>
+</html>
